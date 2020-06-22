@@ -1,0 +1,14 @@
+{
+  "name": "microblog-api",
+  "version": "1.0.0",
+  "description": "MicroBlog API",
+  "main": "main.js",
+  "scripts": {
+    "start": "json-server --watch ./data/db.json"
+  },
+  "author": "Marcos G. Zimmermann | Ariel Ribeiro",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "0.16.1"
+  }
+}
