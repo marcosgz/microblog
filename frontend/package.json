@@ -1,0 +1,14 @@
+{
+  "name": "microblog-web",
+  "version": "1.0.0",
+  "description": "MicroBlog WEB",
+  "main": "main.js",
+  "scripts": {
+    "start": " http-server ./ -p 3001"
+  },
+  "author": "Marcos G. Zimmermann | Ariel Ribeiro",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "0.12.3"
+  }
+}
