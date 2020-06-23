@@ -33,7 +33,7 @@
     }
 
     this.element = function() {
-      var html = `<div class="feed-tweets">
+      var html = `<div class="feed-tweets" id="user-${this.id()}">
       <div class="feed-tweets-img">
         <i class="fa fa-user-circle"></i>
       </div>
@@ -65,9 +65,9 @@
     var tweetFormWrapper = doc.querySelector(options.tweetFormSelector);
 
     // Variáveis Públicas
-
     function handleForm(event) {
       event.preventDefault();
+
       var slug = event.target.querySelector('[name="slug"]').value;
       var name = event.target.querySelector('[name="name"]').value;
       var bodyField = event.target.querySelector('[name="body"]');
