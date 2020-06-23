@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/spinner.css">
   <title>MicroBlog</title>
 </head>
 
-<body>
+<body class="loading">
   <div class="container">
     <div class="header item">
       <div class="header-left">
@@ -33,65 +34,28 @@
           <p class="par"> Página Inical </p>
           <!-- <i class="fab fa-jedi-order"></i> -->
         </div>
-        <div class="feed-make-post">
+        <form action="#" class="feed-make-post" data-js="tweet-form">
+          <input type="hidden" name="slug" value="marcosgz">
+          <input type="hidden" name="name" value="Marcos G. Zimmermann">
           <i class="fa fa-user-circle"></i>
-          <input id="make-tweet-input" type="text" placeholder="O que está acontecendo?">
+          <input id="make-tweet-input" type="text" name="body" placeholder="O que está acontecendo?">
           <i class="fa make-post-img fa-image"></i>
           <i class="fa make-post-img fa-video-camera"></i>
           <i class="fa make-post-img fa-bar-chart"></i>
+        </form>
+        <div class="sk-cube-grid">
+          <div class="sk-cube sk-cube1"></div>
+          <div class="sk-cube sk-cube2"></div>
+          <div class="sk-cube sk-cube3"></div>
+          <div class="sk-cube sk-cube4"></div>
+          <div class="sk-cube sk-cube5"></div>
+          <div class="sk-cube sk-cube6"></div>
+          <div class="sk-cube sk-cube7"></div>
+          <div class="sk-cube sk-cube8"></div>
+          <div class="sk-cube sk-cube9"></div>
         </div>
-        <div class="feed-tweets">
-          <div class="feed-tweets-img">
-            <i class="fa fa-user-circle"></i>
-          </div>
-
-          <div class="feed-tweets-content">
-            <p class="par">Username<span class="tweet-handle">@username</span></p>
-            <p>blah blah blah blah blah blah blah blah blah</p>
-          </div>
-        </div>
-
-
-        <div class="feed-tweets">
-          <div class="feed-tweets-img">
-            <i class="fa fa-user-circle"></i>
-          </div>
-
-          <div class="feed-tweets-content">
-            <p class="par">Username<span class="tweet-handle">@username</span></p>
-            <p>blah blah blah blah blah blah blah blah blah
-              <br /><br /></br><br /><br /></br>
-              <br /><br /></br>
-              mais</p>
-          </div>
-        </div>
-
-        <div class="feed-tweets">
-          <div class="feed-tweets-img">
-            <i class="fa fa-user-circle"></i>
-          </div>
-
-          <div class="feed-tweets-content">
-            <p class="par">Username<span class="tweet-handle">@username</span></p>
-            <p>blah blah blah blah blah blah blah blah blah
-              <br /><br /></br><br /><br /></br>
-              <br /><br /></br>
-              mais</p>
-          </div>
-        </div>
-
-        <div class="feed-tweets">
-          <div class="feed-tweets-img">
-            <i class="fa fa-user-circle"></i>
-          </div>
-
-          <div class="feed-tweets-content">
-            <p class="par">Username<span class="tweet-handle">@username</span></p>
-            <p>blah blah blah blah blah blah blah blah blah
-              <br /><br /></br><br /><br /></br>
-              <br /><br /></br>
-              mais</p>
-          </div>
+        <div data-js="tweets">
+          <!-- Conteúdo vai ser carregado aqui -->
         </div>
       </div>
 
@@ -173,8 +137,8 @@
     </div>
   </div>
 
-
-
+  <!-- Documentação dessa lib: https://github.com/fdaciuk/ajax -->
+  <script src="//cdn.rawgit.com/fdaciuk/ajax/v3.0.4/dist/ajax.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

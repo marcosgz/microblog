@@ -1,8 +1,27 @@
 {
-  "posts": [
-    { "id": "7cddc125-0bb7-44a1-b5a8-f89556ea30c5", "slug": "marcosgz", "name": "Marcos G. Zimmermann", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" },
-    { "id": "a40dd28c-c4fa-4adf-982c-da2eddd6a9e4", "slug": "ariel", "name": "Ariel Ribeiro", "body": "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat" },
-    { "id": "88954ae7-102a-4be3-962a-0f8abe239a4a", "slug": "ariel", "name": "Ariel Ribeiro", "body": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
-    { "id": "12dc46ee-46e8-4cde-9814-8fc719697fd0", "slug": "marcosgz", "name": "Marcos G. Zimmermann", "body": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." }
+  "posts": [{
+      "id": "7cddc125-0bb7-44a1-b5a8-f89556ea30c5",
+      "slug": "marcosgz",
+      "name": "Marcos G. Zimmermann",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
+    },
+    {
+      "id": "a40dd28c-c4fa-4adf-982c-da2eddd6a9e4",
+      "slug": "ariel",
+      "name": "Ariel Ribeiro",
+      "body": "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+    },
+    {
+      "id": "88954ae7-102a-4be3-962a-0f8abe239a4a",
+      "slug": "ariel",
+      "name": "Ariel Ribeiro",
+      "body": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+      "id": "12dc46ee-46e8-4cde-9814-8fc719697fd0",
+      "slug": "marcosgz",
+      "name": "Marcos G. Zimmermann",
+      "body": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
   ]
 }
