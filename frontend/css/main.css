@@ -1,4 +1,288 @@
+:root {
+  --twitter-blue: rgb(29, 161, 242);
+}
+
 body {
+  margin: 0 0 20px 0;
+  background-color: rgb(230, 236, 240);
+  font-family: "Segoe UI";
+  font-size: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 15% 0 15%;
+}
+
+.side {
+  width: 40%;
+}
+
+.item {
+  border: 1px solid rgb(204, 214, 221);
+  background-color: rgb(255, 255, 255);
+}
+
+.header {
+  height: 55px;
+  padding: 0 15% 0 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fas {
+  font-size: 2em;
+  color: rgb(101, 119, 134);
+}
+
+.far {
+  font-size: 2em;
+  color: rgb(101, 119, 134);
+}
+
+.fa-home {
+  color: rgb(29, 161, 242);
+  border-bottom: 3px solid var(--twitter-blue);
+}
+
+#search-input {
+  width: 400px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 25px;
+  border-style: none;
+  background-color: rgb(230, 236, 240);
+  align-self: center;
+  margin-right: 15px;
+}
+
+.header-right>i {
+  align-self: center;
+}
+
+.header-right>p {
+  align-self: center;
+}
+
+.footer-text {
+  list-style: none;
+  padding-left: 0;
+  font-family: "Segoe UI";
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.footer-text>li {
+  display: inline-block;
+  padding: 10px;
+  padding-left: 0px;
+}
+
+.nav-list {
+  list-style: none;
+  display: inline;
+  margin: 0;
+  padding-left: 0;
+}
+
+.info-copyright {
+  font-family: "Segoe UI";
+  font-size: 12px;
+}
+
+.nav-username {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.nav-list>li {
+  display: inline-block;
+  padding-right: 50px;
+}
+
+.header-left {
+  align-self: center;
+}
+
+.fa-angle-down {
+  font-size: 1em;
+}
+
+.header-right {
+  align-self: center;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-weight: bold;
+  display: flex;
+}
+
+.feed {
+  width: 60%;
+  margin-right: 10px;
+}
+
+.trends {
+  margin-bottom: 5px;
+  /*   padding-left: 5px; */
+}
+
+.follow {
+  margin-bottom: 5px;
+}
+
+.trends-info {
+  border-top: 1px solid lightgray;
+  padding: 15px 0 15px 15px;
+}
+
+.trends-info p {
+  margin: 0;
+  padding: 2px 0 2px 0;
+}
+
+.trends h3 {
+  padding-left: 15px;
+}
+
+.trend-country {
+  color: rgb(101, 119, 134);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.trend-hash {
+  font-weight: 700;
+  /*   line-height: 1.3px; */
+}
+
+.trend-num {
+  color: rgb(101, 119, 134);
+  font-weight: 400;
+}
+
+.who-follow-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 0 15px;
+  min-height: 70px;
+  border-top: 1px solid lightgray;
+}
+
+.who-follow-right input {
+  border-radius: 99px;
+  min-height: 30px;
+  width: 75px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid var(--twitter-blue);
+  background-color: white;
+  color: var(--twitter-blue);
+  font-weight: 700;
+}
+
+.who-follow-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.who-follow-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.who-follow-header {
+  padding-left: 15px;
+}
+
+.who-follow-profile {
+  font-weight: 700;
+}
+
+.follow a {
+  text-decoration: none;
+}
+
+.who-follow-more {
+  padding: 15px 0 15px 15px;
+  border-top: 1px solid lightgray;
+  color: var(--twitter-blue);
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.par {
   margin: 0;
   padding: 0;
+  font-weight: 900;
+  font-size: 19px;
+}
+
+.feed-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding: 5px 10px 5px 10px;
+  min-height: 40px;
+}
+
+.fa-jedi-order {
+  font-size: 1.75em;
+  color: var(--twitter-blue);
+}
+
+.feed-make-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+
+.make-post-img {
+  color: var(--twitter-blue);
+  font-size: 1.5em;
+}
+
+#make-tweet-input {
+  width: 350px;
+  height: 25px;
+  border-radius: 999px;
+  padding: 5px;
+  background-color: rgb(230, 236, 240);
+  border: none;
+}
+
+.feed-tweets {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  border-bottom: 1px solid lightgray;
+}
+
+.feed-tweets-img {
+  margin: 5px;
+}
+
+.tweet-handle {
+  font-size: 13px;
+  font-weight: 400;
+  padding-left: 2px;
 }
