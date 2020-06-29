@@ -271,10 +271,16 @@ body {
 }
 
 .feed-tweets {
+  position: relative;
   display: flex;
   flex-direction: row;
   padding: 15px;
   border-bottom: 1px solid lightgray;
+}
+
+.feed-tweets textarea {
+  width: 100%;
+  height: 100px;
 }
 
 .feed-tweets-img {
@@ -285,4 +291,23 @@ body {
   font-size: 13px;
   font-weight: 400;
   padding-left: 2px;
+}
+
+.tweet-actions {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.tweet-actions i {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.edit-tweet-form {
+  display: none;
+}
+
+.edit-tweet-form.active {
+  display: block;
 }

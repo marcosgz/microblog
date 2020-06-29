@@ -33,13 +33,23 @@
     }
 
     this.element = function() {
-      var html = `<div class="feed-tweets" id="user-${this.id()}">
+      var html = `<div class="feed-tweets" id="tweet-${this.id()}">
+      <div class="tweet-actions">
+        <i class="fa fa-edit" title="Editar" data-js="edit-tweet" data-tweet-id="${this.id()}"></i>
+        <i class="fa fa-trash" title="Remover" data-js="remove-tweet" data-tweet-id="${this.id()}"></i>
+      </div>
       <div class="feed-tweets-img">
         <i class="fa fa-user-circle"></i>
       </div>
       <div class="feed-tweets-content">
-        <p class="par">${this.name()}<span class="tweet-handle">${this.screenName()}</span></p>
-        <p>${this.body()}</p>
+        <p class="par">${this.name()}
+          <span class="tweet-handle">${this.screenName()}</span>
+        </p>
+        <p id="tweet-body-${this.id()}">${this.body()}</p>
+        <div class="edit-tweet-form" data-js="edit-tweet-form" data-target="#tweet-body-${this.id()}">
+          <textarea>${this.body()}</textarea>
+          <button>Atualizar</button>
+        </div>
       </div>
     </div>`;
       var node = document.createElement('div');
@@ -61,8 +71,8 @@
       baseUrl: options.baseURL,
     });
     var spinner = new Spinner();
-    var tweetsWrapper = doc.querySelector(options.tweetsSelector);
-    var tweetFormWrapper = doc.querySelector(options.tweetFormSelector);
+    var tweetsWrapper = doc.querySelector('[data-js="' + options.tweetsSelectorID + '"]');
+    var newTweetFormWrapper = doc.querySelector('[data-js="' + options.newTweetFormSelectorID + '"]');
 
     // Variáveis Públicas
     function handleForm(event) {
@@ -88,11 +98,72 @@
       });
     }
 
-    function initializeForm() {
-      tweetFormWrapper.addEventListener('submit', handleForm, false);
+    function initializeForms() {
+      newTweetFormWrapper.addEventListener('submit', handleForm, false);
     }
 
-    function loadPosts() {
+    function handleRemoveTweet(e) {
+      e.preventDefault();
+      var tweetID = e.target.dataset.tweetId;
+      console.log('Remover Post', tweetID);
+
+      spinner.start()
+      request.delete('/posts/' + tweetID).then(function(response) {
+        console.log('Posts removido', response);
+        tweetsWrapper.querySelector('#tweet-' + tweetID).remove();
+        spinner.stop()
+      });
+    }
+
+    function handleEditTweet(e) {
+      e.preventDefault();
+      var tweetID = e.target.dataset.tweetId;
+      console.log('Editar Post', tweetID);
+
+      var activeClass = 'active';
+      var wrapper = tweetsWrapper.querySelector('#tweet-' + tweetID + ' [data-js="' + options.editTweetFormSelectorID + '"]');
+      var btn = wrapper.querySelector('button');
+      var input = wrapper.querySelector('textarea');
+      var bodyWrapper = tweetsWrapper.querySelector(wrapper.dataset.target);
+
+      wrapper.classList.add(activeClass);
+      btn.addEventListener('click', function(ev) {
+        ev.preventDefault();
+        spinner.start()
+        var data = {
+          body: input.value,
+          slug: newTweetFormWrapper.querySelector('[name="slug"]').value,
+          name: newTweetFormWrapper.querySelector('[name="name"]').value,
+        }
+        request.put('/posts/' + tweetID, data).then(function(response) {
+          console.log('Posts atualizado', response);
+          bodyWrapper.innerHTML = input.value;
+          spinner.stop()
+        });
+
+        wrapper.classList.remove(activeClass)
+      });
+    }
+
+    function initializeLinks() {
+      doc.addEventListener('click', function(e) {
+        if (!e.target || !e.target.dataset || !e.target.dataset.js) { return }
+
+        switch (e.target.dataset.js) {
+          case options.removeTweetLinkSelectorID:
+            handleRemoveTweet.apply(this, [e]);
+            break;
+          case options.editTweetLinkSelectorID:
+            handleEditTweet.apply(this, [e]);
+            break;
+          default:
+            break;
+        }
+
+      }.bind(this));
+    }
+
+    function loadContent() {
       request.get('/posts').then(function(posts) {
         console.log('Posts recebido', posts);
         posts.forEach(function(json) {
@@ -105,18 +176,22 @@
     }
 
     function initialize() {
-      initializeForm.apply(this);
-      loadPosts.apply(this);
+      initializeForms.apply(this);
+      initializeLinks.apply(this);
+      loadContent.apply(this);
     }
 
     initialize.apply(this);
   }
 
   doc.addEventListener('DOMContentLoaded', function() {
-    var app = new Application({
+    var _app = new Application({
       baseURL: 'http://localhost:3000',
-      tweetsSelector: '[data-js="tweets"]',
-      tweetFormSelector: '[data-js="tweet-form"]'
+      tweetsSelectorID: 'tweets',
+      newTweetFormSelectorID: 'new-tweet-form',
+      editTweetFormSelectorID: 'edit-tweet-form',
+      editTweetLinkSelectorID: 'edit-tweet',
+      removeTweetLinkSelectorID: 'remove-tweet',
     });
   });
 
