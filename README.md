@@ -2,7 +2,7 @@
 
 NOME DO PROJETO:MicroBlog
 
-DESCRIÇÃO: Este projeto foi desenvolvido para a materia de LINGUAGEM DE PROGRAMACAO II, a fim de demonstrar os conhecimentos obtidos durante a materia.
+DESCRIÇÃO: Este projeto foi desenvolvido para a materia de LINGUAGEM DE PROGRAMACAO II, a fim de demonstrar os conhecimentos obtidos durante a semestre.
 
 EQUIPE: Marcos Zimmermann e Ariel Sam
 
