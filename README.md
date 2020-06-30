@@ -19,3 +19,8 @@ Este projeto foi desenvolvido para a materia de `LINGUAGEM DE PROGRAMACAO II`, a
 * [Backend em Node](backend-node/)
 * [Backend em Ruby](backend-rack/)
 * [Frontend](frontend/)
+
+
+## Preview
+
+![](example.gif)
