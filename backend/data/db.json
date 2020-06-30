@@ -1,6 +1,5 @@
 {
-  "posts": [
-    {
+  "posts": [{
       "id": "7cddc125-0bb7-44a1-b5a8-f89556ea30c5",
       "slug": "marcosgz",
       "name": "Marcos G. Zimmermann",
@@ -23,12 +22,6 @@
       "slug": "marcosgz",
       "name": "Marcos G. Zimmermann",
       "body": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-      "slug": "Username",
-      "name": "My Username",
-      "body": "test",
-      "id": "HIdZn2s"
     }
   ]
 }

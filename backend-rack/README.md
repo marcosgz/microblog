@@ -4,13 +4,13 @@ Backend da aplicação.
 
 ## Dependências
 
-* NodeJS
+* Ruby
 
 ## Setup
 
 ```
-$ npm install
-$ npm run start
+$ ./bin/setup.sh
+$ ./bin/server.sh
 ```
 
 ## Resources
