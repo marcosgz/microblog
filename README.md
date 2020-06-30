@@ -14,6 +14,6 @@ Tecnologias Utilizadas: REST API como backend em VanillaJS como frontend de um m
 
 
 
-
-* [Backend](backend/)
+* [Backend em Node](backend-node/)
+* [Backend em Ruby](backend-rack/)
 * [Frontend](frontend/)
